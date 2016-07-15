@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>We're Making a Form!</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h1>Contact Us Today!</h1>
+  <div id="container">
+    <div id="header">
+      <ul class="uMenu">
+        <a href="index.html"><li>Home</li></a>
+        <a href="contact.html"><li>Contact</li></a>
+        <a href="about.html"><li>About</li></a>
+      </ul>
+    </div>
+
+    <div id="body">
+      <div id="fContainer">
+        <form action="formspree.io" id="contact">
+          <div>
+            <p><span>&bull;&nbsp;&nbsp;  YOUR FULL NAME  &nbsp;&nbsp;&bull;</span></p>
+            <input type="text" size="35">
+          </div>
+          <div><p><span>&bull;&nbsp;&nbsp;  SUBJECT PRIORITY  &nbsp;&nbsp;&bull;</span></p>
+            <select class="" name="" >
+              <option value="1"></option>
+              <option value="2">IMPORTANT</option>
+              <option value="3">URGENT</option>
+              <option value="4">VERY URGENT</option>
+              <option value="5">CRITICAL</option>
+            </select>
+
+          </div>
+          <div>
+            <p><span class="s2">&bull;&nbsp;&nbsp; RETURN CONTACT PREFERENCES &nbsp;&nbsp;&bull;</span></p>
+
+            <div class="dPrefs">
+              <p>
+                <input type="radio" name="seating" value="Call" selected>Phone Call
+                <input type="radio" name="seating" value="Email">Email
+                <input type="radio" name="seating" value="SMS">SMS/MMS
+                <input type="radio" name="seating" value="VTC">VTC
+              </p>
+              <p>
+                <input type="checkbox" name="" id="">Contact during AM
+                <input type="checkbox" name="" id="">Contact during PM
+              </p>
+            </div>
+          </div>
+
+          <div><p><span>&bull;&nbsp;&nbsp;NOTES&nbsp;&nbsp;&bull;</span></p>
+            <textarea rows="9">
+            </textarea>
+            <div><button type="button" name="button">CONTACT</button></div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <div id="footer">
+    </div>
+
+  </div>
+
+</body>
+</html>

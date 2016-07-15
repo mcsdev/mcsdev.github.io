@@ -1,0 +1,144 @@
+@import 'https://fonts.googleapis.com/css?family=Arima+Madurai|Indie+Flower|Open+Sans+Condensed:300|Ubuntu+Condensed';
+
+*{
+  font-family: 'Ubuntu Condensed', sans-serif;
+  color: #ffffff;
+}
+
+body {
+  background-color: #000000;
+}
+
+#container {
+  border-color: rgba(#bfbfbf, 0.12);
+  border: 5px ridge;
+  background-color:#1c1c1c;
+  border-radius: 40px;
+  width:50%;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  background-image: url('../images/chrome-mesh.png' );
+
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type=text], textarea, select  {
+  border-radius:15px;
+  border-color: #d2d2d2;
+  border-style: ridge;
+  border-width: 1px;
+  font-size: 14pt;
+  -webkit-box-shadow: inset 4px 4px 4px #2b2b2b;
+  box-shadow: inset 4px 4px 6px #2b2b2b;
+  color:#ba0000;
+  padding:8px;
+  text-align: center;
+  background-color: #d1d1d1;
+  background: radial-gradient( #ffffff,#b8b8b8);/* Standard syntax */
+
+}
+
+option {
+  color:#ba0000
+
+}
+
+textarea{
+  width: 90%;
+  margin-bottom: 25px;
+  background: -webkit-linear-gradient(left top, #5b5b5b, white, rgba(#5b5b5b, 0.09)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #5b5b5b, white, rgba(#5b5b5b, 0.09)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #5b5b5b, white, rgba(#5b5b5b, 0.09)); /* For Firefox 3.6 to 15 */
+  background: radial-gradient( #ffffff,#b8b8b8);/* Standard syntax */
+}
+span {
+
+  border-color:#ffffff;
+  /*border-radius: 20px;*/
+  /*background-color: #d0d0d0;*/
+  padding: 8px 35px;
+  margin: 15px;
+  border: 3px ridge #5b5b5b;
+  color: black;
+  background: #454545; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #5b5b5b, white, #5b5b5b); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #5b5b5b, white, #5b5b5b); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #5b5b5b, white, #5b5b5b); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #5b5b5b, white, #5b5b5b ); /* Standard syntax */
+  font-weight: bold;
+
+}
+
+
+span > input {
+  background: none;
+  border: none;
+  color:#ff0000;
+}
+
+div > span {
+  background-color: #828282;
+
+}
+
+.s2 {
+
+  border: 3px ridge;
+  /*border-radius: 0px;*/
+  color:#ff0000;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.dPrefs {
+  padding:5px 0px;
+  margin-top: 0px;
+  background-color: #ffbaba;
+  background: radial-gradient( #ff0000,#360000);
+  border: 3px ridge #ff0000;
+
+  width: 400px;
+  margin: auto;
+}
+
+button {
+  padding: 10px;
+  color: #ff0000;
+}
+
+.uMenu a li {
+  border:2px ridge #000000;
+  list-style:none;
+  display: inline;
+  margin: 0px 0px;
+  background-color: #989898;
+  padding:10px;
+  font-size: 14pt;
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
+
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.uMenu li:hover {
+  cursor: pointer;
+  background-color:#242424;
+  border:2px ridge #ffffff;
+
+}
+
+
+ul {
+  margin-bottom: 25px;
+  padding: 15px 15px 30px 15px;
+
+
+}

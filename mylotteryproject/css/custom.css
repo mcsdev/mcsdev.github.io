@@ -1,0 +1,142 @@
+
+body{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 12pt;
+}
+
+.cursEmph{
+  padding-right: 15px;
+  font-family: 'Shadows Into Light Two', cursive;
+  /*font-weight: bold;*/
+}
+
+.xtraLarge {
+  font-size: 55pt;
+  /*color: white;*/
+}
+.xtraLarge-blu {
+  font-size: 55pt;
+  color: #90579e;
+}
+
+.smalltext {
+  font-size: 10pt;
+}
+
+.boxFB {
+  font-size: 13pt;
+  font-family: arial;
+  font-weight: bolder;
+  background-color: #001875;
+  /*width: auto;*/
+  color: white;
+  padding:7px 30px;
+  margin: auto;
+
+}
+
+h1 {
+  /*color: white;*/
+  margin: auto;
+  padding: 25px 0 40px;
+  text-align: center;
+
+}
+
+.autoWidth {
+  width: auto;
+  display: inline;
+
+}
+
+.centerAligned {
+  text-align: center;
+
+}
+
+.headline1 {
+color:white;
+
+}
+
+.headline2 {
+color:black;
+
+}
+.cSection {
+  /*padding-top: 200px;*/
+  margin-top: 10px;
+}
+
+.cSels {
+  /*padding-top: 200px;*/
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.inpNumSlot {
+  border-color:#ffffff;
+  border-width: 2px;
+  background-color:rgba(255,255,255,0.4);
+  color: white;
+  font-weight: bold;
+}
+
+.inpMegaSlot {
+  border-color: red;
+  border-width: 2px;
+  background-color:rgba(255,255,255,0.4);
+  color: white;
+  font-weight: bold;
+}
+
+.main {
+  background: linear-gradient(70deg, #64d6d3, #90579e);
+  width:100%;
+  /*padding-bottom: 30px;*/
+  /*border-bottom: solid 1px;*/
+  box-shadow:  2px 2px 6px #5d8383;
+}
+
+.island {
+  margin-top: 150px;
+  padding: 20px 45px 50px;
+  background: linear-gradient(250deg, #64d6d3, #90579e);
+
+  width: 60%;
+  border-radius: 2px;
+  /*border-width: none;*/
+  box-shadow:  2px 2px 6px #5d8383;
+  /*width: 60%;*/
+  margin:135px auto;
+}
+
+
+.navCustom {
+  background-color:rgba(0, 0, 0, 0.48) ;
+}
+
+.navCustom a:link, .navCustom a:visited{
+  color: white;
+}
+
+.navCustom a:hover {
+  color:#90579e;
+}
+
+.sec1 {
+  padding: 20px 10px;
+  background-color: #ffffff;
+}
+
+
+.sec2 {
+  padding: 50px 10px;
+  background-color: #d2d2d2;
+}
+
+.secFoot {
+  padding: 100px 10px;
+  /*background: linear-gradient(200deg, #64d6d3, #90579e);*/
+  background-color: #626262
+}
