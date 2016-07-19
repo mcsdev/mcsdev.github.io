@@ -11,22 +11,17 @@
   <link rel="stylesheet" href="css/custom.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+
+
 </head>
 
-<!-- Pseudo Begin
 
-- Page loads
-- Geo location logic determines state and state select box automatically selected and makes call to database, which returns applicable games based on selected US state
-- select box dynamically populated with games applicable to state
-- most recently available draw results for that game and state are also returned
-- input boxes dynamically generated based on game selected
-
--->
 
 
 
 <body>
   <div class="container main">
+
 
     <div class="container"> <!-- navigation bar container -->
       <!-- Fixed navbar -->
@@ -42,7 +37,7 @@
             <a class="navbar-brand" href="#">Winner's Edge</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navCustom">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
             </ul>
@@ -57,7 +52,7 @@
     <div class="container island">
       <form action="">
         <div class="row">
-          <h1 class="headline1"><span class="cursEmph"> &nbsp;&nbsp; Increase the odds!</span>  Your lucky found here!</h1>
+          <h1 class="headline1"><span class="cursEmph"> &nbsp;&nbsp; Increase The Odds!</span>  Your lucky found here!</h1>
           <!-- selectors row -->
           <div class="row">
             <div class="cSels">
@@ -204,5 +199,13 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <!-- bootstrap javascript -->
   <script src="js/bootstrap.min.js" ></script>
+  <script type="text/javascript" src="js/project.js"></script>
+
+  <div id="geo"></div>
+
+<script type="text/javascript">
+  getLocation();
+</script>
+
 </body>
 </html>
