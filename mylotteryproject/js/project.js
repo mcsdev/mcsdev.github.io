@@ -28,7 +28,7 @@ function storePosition(myposition) {
 
    oPosData = $.get(strReverseGeo);
 
-document.getElementById("geo").innerHTML = strReverseGeo;
+// document.getElementById("geo").innerHTML = strReverseGeo;
 
 return oPosData;
 
