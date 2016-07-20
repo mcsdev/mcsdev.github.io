@@ -41,7 +41,7 @@ function storePosition(myposition) {
 
 document.getElementById("geo").innerHTML = arrPosData;
 console.log(arrPosData);
-console.log(JSON.stringify(arrPosData));
+console.log(JSON.stringify(arrPosData)); 
 return;
 
 // alert(oPosData.results.address_components[4].longname);
