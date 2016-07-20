@@ -18,7 +18,7 @@
 
 var strErr;
 var strReverseGeo;
-var oPosData;
+
 // var outpDiv = document.getElementById("geo");
 
 function getLocation() {
@@ -36,11 +36,12 @@ function storePosition(myposition) {
     var lon = myposition.coords.longitude;
     strReverseGeo = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
-   oPosData = $.get(strReverseGeo);
+// Get JSON from google api
+   var arrPosData = $.get(strReverseGeo);
 
- // document.getElementById("geo").innerHTML = oPosData.results[4].address_components.long_name;
-document.getElementById("geo").innerHTML = oPosData;
-document.getElementById("geo").innerHTML = strReverseGeo;
+document.getElementById("geo").innerHTML = arrPosData;
+console.log(arrPosData);
+console.log(JSON.stringify(arrPosData));
 return;
 
 // alert(oPosData.results.address_components[4].longname);
