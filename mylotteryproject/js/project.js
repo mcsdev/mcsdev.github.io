@@ -1,11 +1,21 @@
-// Pseudo Begin
+// ***** Begin Pseudo ******
 //
 // - Page loads
-// - Geo location logic tries to determine state select box automatically and toggles it selected.  Call made to database, which returns applicable games based on selected US state
-// - select box dynamically populated with games applicable to state once state selected
+// - Geo location logic tries to determine state select box automatically and toggles.  Call made to database, which returns appropriate games available based on selected US state and populates second select box
 // - most recently available draw results for that game and state are also returned
-// - input boxes dynamically generated based on game selected
-//
+// - input boxes dynamically generated based on game selected and game properties pull from db
+// - limits set for input boxes based on game properties
+
+
+
+
+
+
+// ***** End Pseudo ******
+
+
+
+
 var strErr;
 var strReverseGeo;
 var oPosData;
@@ -37,5 +47,13 @@ return;
 
 function findGames(sVal) {
 //do this when state changed
+
+}
+
+
+function showGameSlots () {
+// this function will display the appropriate input boxes to generate match query
+// based on the values retrieved from the database using the state and game select boxes
+
 
 }

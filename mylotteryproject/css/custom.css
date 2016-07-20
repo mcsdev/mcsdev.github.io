@@ -87,8 +87,12 @@ h1 {
 
 }
 
-.form-control:focus {
+#dUpdate {
+visibility: hidden;
 
+}
+#sQueryTxt {
+visibility:hidden;
 
 }
 
@@ -116,6 +120,7 @@ h1 {
   color: white;
   font-weight: bold;
   padding: 5px;
+  visibility: hidden;
   /*width: 75px;*/
 }
 
@@ -131,6 +136,7 @@ h1 {
   background-color:rgba(255,255,255,0.4);
   color: red;
   font-weight: bold;
+  visibility: hidden;
   /*width: 75px;*/
 }
 

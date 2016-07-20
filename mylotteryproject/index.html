@@ -1,227 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lottery Paradise</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Lottery Paradise</title>
 
-  <!-- bootstrap css-->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
-
-
+<!-- bootstrap css-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
 </head>
 
-
-
-
-
 <body>
-  <div class="container main">
-
-
-    <div class="container"> <!-- navigation bar container -->
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-default navbar-fixed-top navCustom">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Winner's Edge</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navCustom">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-            </ul>
-
-          </div><!--/.nav-collapse -->
+<div class="container main">
+  <div class="container"> <!-- navigation bar container -->
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navCustom">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="#">Winner's Edge</a> </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navCustom">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
         </div>
-      </nav>
-    </div>
-
-
-    <!-- begin island -->
-    <div class="container island">
-      <form action="">
-        <div class="row">
-          <h1 class="headline1"><span class="cursEmph"> &nbsp;&nbsp; Increase The Odds!</span>  Your lucky found here!</h1>
-          <!-- selectors row -->
-          <div class="row">
-            <div class="cSels">
-              <div class="input-group-addon autoWidth">State</div>
-
-              <!-- this control should eventually be created dynamically  -->
-              <select class="form-control autoWidth" name="state" onchange="findGames(this.value); document.getElementById('sState').innerHTML = '  [' + this.value + ']';">
-                <option></option>
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>Arizona</option>
-                <option>Arkansas</option>
-                <option>California</option>
-                <option>Colorado</option>
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>Florida</option>
-                <option>Georgia</option>
-                <option>Hawaii</option>
-                <option>Idaho</option>
-                <option>Illinois</option>
-                <option>Indiana</option>
-                <option>Iowa</option>
-                <option>Kansas</option>
-                <option>Kentucky</option>
-                <option>Louisiana</option>
-                <option>Maine</option>
-                <option>Maryland</option>
-                <option>Massachusetts</option>
-                <option>Michigan</option>
-                <option>Minnesota</option>
-                <option>Mississippi</option>
-                <option>Missouri</option>
-                <option>Montana</option>
-                <option>Nebraska</option>
-                <option>Nevada</option>
-                <option>New Hampshire</option>
-                <option>New Jersey</option>
-                <option>New Mexico</option>
-                <option>New York</option>
-                <option>North Carolina</option>
-                <option>North Dakota</option>
-                <option>Ohio</option>
-                <option>Oklahoma</option>
-                <option>Oregon</option>
-                <option>Pennsylvania</option>
-                <option>Rhode Island</option>
-                <option>South Carolina</option>
-                <option>South Dakota</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Utah</option>
-                <option>Vermont</option>
-                <option>Virginia</option>
-                <option>Washington</option>
-                <option>West Virginia</option>
-                <option>Wisconsin</option>
-                <option>Wyoming</option>
-              </select>
-
-              <!-- this control is eventually created dynamically depending on state selected  -->
-
-              <select class="form-control autoWidth">
-                <option></option>
-                <option>Super Lotto</option>
-                <option>Mega Millions</option>
-                <option>Powerball</option>
-              </select>
-              <div class="input-group-addon autoWidth">Game</div>
-            </div>
-          </div>
-          <!--  end selectors row -->
-
-          <!--  begin status  row -->
-          <div class="row cStats">
-            <div class="col-lg-12">
-              <span>Query lottery games in<span id="sState"></span></span>
-              <span> (game data last updated:   )<span id="sUpdate"></span></span>
-            </div>
-          </div>
-          <!--  end status  row -->
-
-          <div class="row cSection"> <!-- draw numbers row -->
-            <div class="col-lg-1"></div>
-            <div class="col-lg-1"></div>
-
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpNumSlot" id="tbxChute1" placeholder="#">
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpNumSlot" id="tbxChute2" placeholder="#">
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpNumSlot" id="tbxChute3" placeholder="#">
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpNumSlot" id="tbxChute4" placeholder="#">
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpNumSlot" id="tbxChute5" placeholder="#">
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpNumSlot" id="tbxChute6" placeholder="#">
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <div class="form-group">
-                <input type="text" class="form-control inpMegaSlot" id="tbxChute7" placeholder="#">
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </form>
-    </div>
-    <!-- end island -->
-
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
   </div>
-  <!-- end main container -->
 
-  <section>
-    <div class="container-fluid sec1">
+  <!-- begin island -->
+  <div class="container island">
+    <form action="">
+      <div class="row">
+        <h1 class="headline1"><span class="cursEmph"> &nbsp;&nbsp; Increase The Odds!</span> Your lucky found here!</h1>
+        <!-- selectors row -->
+        <div class="row">
+          <div class="cSels">
+            <div class="input-group-addon autoWidth">State</div>
 
+            <!-- this control should eventually be created dynamically  -->
+            <select class="form-control autoWidth" name="state" onchange="findGames(this.value); document.getElementById('sState').innerHTML = '  [' + this.value + ']'; document.getElementById('sQueryTxt').style.visibility = 'visible';">
+              <option></option>
+              <option>Alabama</option>
+              <option>Alaska</option>
+              <option>Arizona</option>
+              <option>Arkansas</option>
+              <option>California</option>
+              <option>Colorado</option>
+              <option>Connecticut</option>
+              <option>Delaware</option>
+              <option>Florida</option>
+              <option>Georgia</option>
+              <option>Hawaii</option>
+              <option>Idaho</option>
+              <option>Illinois</option>
+              <option>Indiana</option>
+              <option>Iowa</option>
+              <option>Kansas</option>
+              <option>Kentucky</option>
+              <option>Louisiana</option>
+              <option>Maine</option>
+              <option>Maryland</option>
+              <option>Massachusetts</option>
+              <option>Michigan</option>
+              <option>Minnesota</option>
+              <option>Mississippi</option>
+              <option>Missouri</option>
+              <option>Montana</option>
+              <option>Nebraska</option>
+              <option>Nevada</option>
+              <option>New Hampshire</option>
+              <option>New Jersey</option>
+              <option>New Mexico</option>
+              <option>New York</option>
+              <option>North Carolina</option>
+              <option>North Dakota</option>
+              <option>Ohio</option>
+              <option>Oklahoma</option>
+              <option>Oregon</option>
+              <option>Pennsylvania</option>
+              <option>Rhode Island</option>
+              <option>South Carolina</option>
+              <option>South Dakota</option>
+              <option>Tennessee</option>
+              <option>Texas</option>
+              <option>Utah</option>
+              <option>Vermont</option>
+              <option>Virginia</option>
+              <option>Washington</option>
+              <option>West Virginia</option>
+              <option>Wisconsin</option>
+              <option>Wyoming</option>
+            </select>
 
+            <!-- this control is eventually created dynamically depending on state selected  -->
 
-      <h1 class="centerAligned">Premium Reports Available!&nbsp; &nbsp;<span class="glyphicon glyphicon-equalizer xtraLarge-blu" aria-hidden="true"></span>
-      </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <h1 class="centerAligned">Become a Member</h1>
-      <div class="centerAligned"><p class="smalltext">GET STARTED WITH</p></div>
-      <div class="centerAligned"><span class="centerAligned boxFB">Facebook</span></div>
+            <select class="form-control autoWidth">
+              <option></option>
+              <option>Super Lotto</option>
+              <option>Mega Millions</option>
+              <option>Powerball</option>
+            </select>
+            <div class="input-group-addon autoWidth">Game</div>
+          </div>
+        </div>
+        <!--  end selectors row -->
+
+        <!--  begin status  row -->
+        <div class="row cStats">
+          <div class="col-lg-12"> <span id="sQueryTxt">Query lottery games in<span id="sState"></span></span> <div id="dUpdate"> (game data last updated:   )<span id="sUpdate"></span></div> </div>
+        </div>
+        <!--  end status  row -->
+
+        <div class="row cSection"> <!-- draw numbers row -->
+          <div class="col-lg-1"></div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpNumSlot" id="tbxChute1" placeholder="#">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpNumSlot" id="tbxChute2" placeholder="#">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpNumSlot" id="tbxChute3" placeholder="#">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpNumSlot" id="tbxChute4" placeholder="#">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpNumSlot" id="tbxChute5" placeholder="#">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpNumSlot" id="tbxChute6" placeholder="#">
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="form-group">
+              <input type="text" class="form-control inpMegaSlot" id="tbxChute7" placeholder="#">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- end island -->
+
+</div>
+<!-- end main container -->
+
+<section>
+  <div class="container-fluid sec1">
+    <h1 class="centerAligned">Premium Reports Available!&nbsp; &nbsp;<span class="glyphicon glyphicon-equalizer xtraLarge-blu" aria-hidden="true"></span> </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h1 class="centerAligned">Become a Member</h1>
+    <div class="centerAligned">
+      <p class="smalltext">GET STARTED WITH</p>
     </div>
-  </section>
+    <div class="centerAligned"><span class="centerAligned boxFB">Facebook</span></div>
+  </div>
+</section>
+<section>
+  <div class="container-fluid sec2"> </div>
+</section>
+<footer>
+  <div class="container-fluid secFoot"> </div>
+</footer>
 
-  <section>
-    <div class="container-fluid sec2">
-
-    </div>
-  </section>
-
-
-  <footer>
-    <div class="container-fluid secFoot">
-    </div>
-  </footer>
-
-  <!-- jquery -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-  <!-- bootstrap javascript -->
-  <script src="js/bootstrap.min.js" ></script>
-  <script type="text/javascript" src="js/project.js"></script>
-
-  <div id="geo"></div>
-
-  <script type="text/javascript">
+<!-- jquery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<!-- bootstrap javascript -->
+<script src="js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="js/project.js"></script>
+<div id="geo"></div>
+<script type="text/javascript">
   getLocation();
   </script>
-
 </body>
 </html>
