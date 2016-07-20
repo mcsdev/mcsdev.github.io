@@ -120,7 +120,7 @@ visibility:hidden;
   color: white;
   font-weight: bold;
   padding: 5px;
-  visibility: hidden;
+  /*visibility: hidden;*/
   /*width: 75px;*/
 }
 
@@ -136,7 +136,7 @@ visibility:hidden;
   background-color:rgba(255,255,255,0.4);
   color: red;
   font-weight: bold;
-  visibility: hidden;
+  /*visibility: hidden;*/
   /*width: 75px;*/
 }
 
