@@ -38,8 +38,9 @@ function storePosition(myposition) {
 
    oPosData = $.get(strReverseGeo);
 
-// document.getElementById("geo").innerHTML = strReverseGeo;
-
+ // document.getElementById("geo").innerHTML = oPosData.results[4].address_components.long_name;
+document.getElementById("geo").innerHTML = oPosData;
+document.getElementById("geo").innerHTML = strReverseGeo;
 return;
 
 // alert(oPosData.results.address_components[4].longname);
