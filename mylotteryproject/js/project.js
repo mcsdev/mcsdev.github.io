@@ -44,26 +44,7 @@ function storePosition(myposition) {
     document.getElementById("selState").value = sgeoState;
     document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;
 
-    // for (i=0; i < thedata.length; i++) {
-    //
-    //     console.log(typeof(thedata[i]));
-    //
-    // }
 
-    //thedata.foreach(function(showdata) {
-      //
-      //  if (showdata.length > 0) {
-      //   console.log(showdata);
-      //
-      // }
-      //
-      // console.log(showdata);
-      // showdata = results.address_components;
-      // // document.getElementById("geo").innerHTML = thedata.results.address_components[1].long_name;
-      // var state = showdata[1].long_name;
-      // console.log(state);
-
-    //});
 
  });
 
