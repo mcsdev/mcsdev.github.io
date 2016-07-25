@@ -34,7 +34,7 @@ function storePosition(myposition) {
 
   strReverseGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
-  //document.getElementById("geo").innerHTML = strReverseGeoURL;
+  document.getElementById("url").innerHTML = strReverseGeoURL;
 
 
   //Get JSON from google api
