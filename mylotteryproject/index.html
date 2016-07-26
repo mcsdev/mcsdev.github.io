@@ -46,8 +46,8 @@
                 <div class="input-group-addon autoWidth">State</div>
 
                 <!-- this control should eventually be created dynamically  -->
-                <select class="form-control autoWidth" id="selState" name="state" onchange="findGames(this.value); document.getElementById('sState').innerHTML = '  [' + this.value + ']'; document.getElementById('sQueryTxt').style.visibility = 'visible';">
-                  <option></option>
+                <select class="form-control autoWidth" id="selState" name="state" onchange="listStateGames(this.value); document.getElementById('sState').innerHTML = '  [' + this.value + ']'; document.getElementById('sQueryTxt').style.visibility = 'visible';">
+                  <option selected></option>
                   <option>Alabama</option>
                   <option>Alaska</option>
                   <option>Arizona</option>
@@ -102,11 +102,8 @@
 
                 <!-- this control is eventually created dynamically depending on state selected  -->
 
-                <select class="form-control autoWidth">
+                <select class="form-control autoWidth" id="selGame" onchange="getGameProperties(this.value); populateGames();  showGameChutes(id);">
                   <option></option>
-                  <option>Super Lotto</option>
-                  <option>Mega Millions</option>
-                  <option>Powerball</option>
                 </select>
                 <div class="input-group-addon autoWidth">Game</div>
               </div>
@@ -115,7 +112,7 @@
 
             <!--  begin status  row -->
             <div class="row cStats">
-              <div class="col-lg-12"> <span id="sQueryTxt">Query lottery games in<span id="sState"></span></span> <div id="dUpdate"> (game data last updated:   )<span id="sUpdate"></span></div> </div>
+              <div class="col-lg-12"> <span id="sQueryTxt">Find number matches for lottery games in<span id="sState"></span></span> <div id="dUpdate"> (game data last updated:   )<span id="sUpdate"></span></div> </div>
             </div>
             <!--  end status  row -->
 

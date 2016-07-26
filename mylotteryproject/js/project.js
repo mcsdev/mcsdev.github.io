@@ -34,19 +34,31 @@ function storePosition(myposition) {
 
   strReverseGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
-  document.getElementById("url").innerHTML = strReverseGeoURL;
+//  document.getElementById("url").innerHTML = strReverseGeoURL;
 
 
   //Get JSON from google api
   $.getJSON(strReverseGeoURL, function(thedata) {
 
     var sgeoState = thedata.results[0].address_components[4].long_name;
+
+    //console.log(typeof(sgeoState));
     document.getElementById("selState").value = sgeoState;
-    document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;
+    document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;   // auto notify current state querrying
+    document.getElementById('sState').innerHTML = '  [' + sgeoState + ']';    // notify search state
+    document.getElementById('sQueryTxt').style.visibility = 'visible';
+
+
+    populateGames();
+
+  });
 
 
 
- });
+
+
+
+
 
 }
 
@@ -59,23 +71,46 @@ function storePosition(myposition) {
 
 
 
+function populateGames(sState) {
+  // return the names of the available games for state and
+  // dynamically populate options for select list (selGame)
+  //alert("games");
+
+  alert("Populating...");
+  var stateData = "../data/vStates.json";
+  //var sJSON = JSON.parse(stateData);
+
+  console.log(JSON.stringify(stateData));
+  $.getJSON(stateData, function(list) {
+
+    document.getElementById("url").innerHTML = list;
+
+  });
+}
+
+
+function listStateGames(sState) {
+  // Do this to return listing of games
+  alert("Finding games in:  " + sState);
+  //populateGames();
 
 
 
 
 
 
-
-
-
-
-function findGames(sVal) {
-  //do this when state changed
 
 }
 
 
-function showGameSlots () {
+function getGameProperties(sState, sGameName) {
+  // Return the properties of a particular game
+
+  document.getElementById('sQueryTxt').style.visibility = 'visible';
+
+}
+
+function showGameChutes (iGmID) {
   // this function will display the appropriate input boxes to generate match query
-  // based on the values retrieved from the database using the state and game select boxes
+  // based on the slot count value
 }

@@ -120,9 +120,21 @@ visibility:hidden;
   color: white;
   font-weight: bold;
   padding: 5px;
-  /*visibility: hidden;*/
+  transition: visibility 500ms;
+  visibility: hidden;
   /*width: 75px;*/
 }
+
+.inpNumSlotTran {
+  border-color:#ffffff;
+  border-width: 2px;
+  background-color:rgba(255,255,255,0.4);
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+
+}
+
 
 .inpNumSlot:focus {
   border-color:#ffffff;
@@ -136,9 +148,12 @@ visibility:hidden;
   background-color:rgba(255,255,255,0.4);
   color: red;
   font-weight: bold;
-  /*visibility: hidden;*/
+  visibility: hidden;
   /*width: 75px;*/
 }
+
+
+
 
 .inpMegaSlot:focus {
   border-color: red;
