@@ -77,11 +77,11 @@ function populateGames(sState) {
   //alert("games");
 
   alert("Populating...");
-  var stateData = "../data/vStates.json";
+  var stateDataSrc = "/data/vStates.json";
   //var sJSON = JSON.parse(stateData);
 
-  console.log(JSON.stringify(stateData));
-  $.getJSON(stateData, function(list) {
+  console.log(JSON.stringify(stateDataSrc));
+  $.getJSON(stateDataSrc, function(list) {
 
     document.getElementById("url").innerHTML = list;
 
