@@ -76,8 +76,6 @@ function populateGames(sState) {
   // dynamically populate options for select list (selGame)
   //alert("games");
 
-    alert("Populating...");
-
     var oFileHTTP = new XMLHttpRequest();
     var urlStateDataSrc = "/mylotteryproject/data/vStates.json";
 
