@@ -79,7 +79,7 @@ function populateGames(sState) {
     alert("Populating...");
 
     var oFileHTTP = new XMLHttpRequest();
-    var urlStateDataSrc = "/mylotteryproject/data/vStates.JSON";
+    var urlStateDataSrc = "/mylotteryproject/data/vStates.json";
 
 
     oFileHTTP.onreadystatechange = function() {
