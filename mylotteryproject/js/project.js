@@ -83,7 +83,8 @@ function populateGames(sState) {
     oFileHTTP.onreadystatechange = function() {
         if (oFileHTTP.readyState == 4 && oFileHTTP.status == 200) {
             var myArr = JSON.parse(oFileHTTP.responseText);
-            myFunction(myArr);
+          //  myFunction(myArr);
+          console.log(typeof(myArr));
         }
     };
     oFileHTTP.open("GET", urlStateDataSrc, true);
@@ -91,13 +92,8 @@ function populateGames(sState) {
 
 
     function myFunction(arr) {
-        var out = "";
-        var i;
-        for(i = 0; i < arr.length; i++) {
-            out += '<a href="' + arr[i].url + '">' +
-            arr[i].display + '</a><br>';
 
-                console.log(out);
+
 
         }
 
