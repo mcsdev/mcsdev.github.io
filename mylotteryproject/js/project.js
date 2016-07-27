@@ -80,7 +80,7 @@ function populateGames(pState) {
 function listStateGames(pState) {
   // Do this to return listing of games
   //alert("Finding games in:  " + pState);
-  populateGames(populateGames(pState));
+  //populateGames(populateGames(pState));
 
 }   //  End listStateGames function
 
