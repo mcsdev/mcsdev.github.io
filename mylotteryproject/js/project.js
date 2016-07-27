@@ -15,6 +15,7 @@ $(function() {    /// Begin-load js first
 var strErr;
 var strReverseGeoURL;
 var urlStateDataSrc;
+var tempState;
 
 });   /// End-load js first
 
@@ -37,7 +38,7 @@ function storePosition(myposition) {
     //Get JSON from google api
     $.getJSON(strReverseGeoURL, function(thedata) {
       var sgeoState = thedata.results[0].address_components[4].long_name;
-
+      tempState = sgeoState;
       //console.log(typeof(sgeoState));
       document.getElementById("selState").value = sgeoState;
       //document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;   // auto notify current state querrying
@@ -45,19 +46,23 @@ function storePosition(myposition) {
       document.getElementById('sQueryTxt').style.visibility = 'visible';
 
     }).done(function() {
-      console.log("populating games");
-        populateGames();
-    });
 
+        populateGames(tempState);
+
+    });
 
 }   //  End storePosition Function
 
 
-function loadDoc() {
+function populateGames(pState) {
+  console.log("populating games for state:  " + pState);
   var xhttp = new XMLHttpRequest();
+
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-     document.getElementById("url").innerHTML = xhttp.responseText;
+       document.getElementById("url").innerHTML = xhttp.responseText;
+
+
     }
   };
 
@@ -67,50 +72,21 @@ function loadDoc() {
 
   console.log(xhttp.responseText);
 
-}
-
-loadDoc();
-
-
-function populateGames(sState) {
-
-     console.log("fired!");
-    // return the names of the available games for state and
-    // dynamically populate options for select list (selGame)
-    urlStateDataSrc = "http://www.surjacorp.com/edge/vStates.json";
-
-    // $.get(urlStateDataSrc, function(theStateData) {
-    //     console.log(typeof(theStateData));
-    //     var stateData = theStateData;
-    //
-    //     document.getElementById("geo").innerHTML = stateData;
-    //     console.log(stateData);
-    //   //alert(stateData);
-    // });
+} //  End populateGames function
 
 
 
 
-
-
-
-
-
-
-
-}   //  End populateGames function
-
-
-function listStateGames(sState) {
+function listStateGames(pState) {
   // Do this to return listing of games
-  alert("Finding games in:  " + sState);
-  //populateGames();
+  //alert("Finding games in:  " + pState);
+  populateGames(populateGames(pState));
 
 }   //  End listStateGames function
 
 
 
-function getGameProperties(sState, sGameName) {
+function getGameProperties(pState, pGameName) {
   // Return the properties of a particular game
 
   document.getElementById('sQueryTxt').style.visibility = 'visible';
@@ -119,7 +95,7 @@ function getGameProperties(sState, sGameName) {
 
 
 
-function showGameChutes (iGmID) {
+function showGameChutes (pGmID) {
   // this function will display the appropriate input boxes to generate match query
   // based on the slot count value
 
