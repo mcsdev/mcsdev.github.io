@@ -61,13 +61,13 @@ function getStateGamesData() {
   gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
   gamesHTTP.send();
 
-
+  console.log(gamesHTTP.responseText);
 } //  End populateGames function
 
     getStateGamesData();
     oStateJSON = gamesHTTP.responseText;
     //alert(gamesHTTP.responseText);
-    console.log(oStateJSON);
+    console.log(typeof(oStateJSON));
 
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
