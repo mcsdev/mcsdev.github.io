@@ -13,6 +13,7 @@ var strReverseGeoURL;
 var urlStateDataSrc;
 var tempState;
 var gamesHTTP = new XMLHttpRequest();
+var oStateJSON;
 
 $(function() {    /// Begin-load js first
 
@@ -54,15 +55,11 @@ function storePosition(myposition) {
 function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
-       document.getElementById("url").innerHTML = gamesHTTP.responseText;
-
+       //document.getElementById("url").innerHTML = gamesHTTP.responseText;
     }
   };
   gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
   gamesHTTP.send();
-  var oJson = gamesHTTP.responseText;
-  return oJson;
-
 } //  End populateGames function
 
     getStateGamesData();
@@ -70,7 +67,20 @@ function getStateGamesData() {
 
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
-    alert("Populating Games for:  " + pState);
+    console.log("Populating Games for:  " + pState);
+    //console.log(typeof(gamesHTTP));
+    //iterate through data and find key value match for state
+
+    $.each(gamesHTTP, function(key, value)  {
+
+        document.getElementById('sState').innerHTML = key + ": " + value ;
+
+
+
+
+
+    });
+
 
 
 }   //  End popStateGames function
