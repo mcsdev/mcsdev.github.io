@@ -96,9 +96,12 @@ function populateGames(sState) {
         for(i = 0; i < arr.length; i++) {
             out += '<a href="' + arr[i].url + '">' +
             arr[i].display + '</a><br>';
+
+                console.log(out);
+
         }
 
-       console.log(out);
+
     }
 
 
