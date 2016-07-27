@@ -69,8 +69,8 @@ function getStateGames(pState) {
 
   xhttp.open("GET", "/mylotteryproject/data/vStates.json", true);
   xhttp.send();
-
-  console.log(xhttp.responseText);
+  var oJson = xhttp.responseText;
+  console.log(typeof(oJson));
 
 } //  End populateGames function
 
