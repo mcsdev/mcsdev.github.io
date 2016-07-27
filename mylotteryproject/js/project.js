@@ -56,6 +56,7 @@ function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
        document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
+       oStateJSON = gamesHTTP.responseText;
     }
   };
   gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
@@ -65,9 +66,6 @@ function getStateGamesData() {
 } //  End populateGames function
 
     getStateGamesData();
-    // oStateJSON = gamesHTTP.responseText;
-    // //alert(gamesHTTP.responseText);
-    // console.log(typeof(oStateJSON));
 
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
