@@ -46,7 +46,7 @@
                 <div class="input-group-addon autoWidth">State</div>
 
                 <!-- this control should eventually be created dynamically  -->
-                <select class="form-control autoWidth" id="selState" name="state" onchange="listStateGames(this.value); document.getElementById('sState').innerHTML = '  [' + this.value + ']'; document.getElementById('sQueryTxt').style.visibility = 'visible';">
+                <select class="form-control autoWidth" id="selState" name="state" onchange="popStateGames(this.value); document.getElementById('sState').innerHTML = '  [' + this.value + ']'; document.getElementById('sQueryTxt').style.visibility = 'visible';">
                   <option selected></option>
                   <option>Alabama</option>
                   <option>Alaska</option>
@@ -102,7 +102,7 @@
 
                 <!-- this control is eventually created dynamically depending on state selected  -->
 
-                <select class="form-control autoWidth" id="selGame" onchange="getGameProperties(this.value); getStateGames(this.value);  showGameChutes(id);">
+                <select class="form-control autoWidth" id="selGame" onchange="getGameProperties(this.value); showGameChutes(id);">
                   <option></option>
                 </select>
                 <div class="input-group-addon autoWidth">Game</div>

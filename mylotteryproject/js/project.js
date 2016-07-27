@@ -8,14 +8,13 @@
 
 // ***** End Pseudo ******
 
-
-$(function() {    /// Begin-load js first
-
-
 var strErr;
 var strReverseGeoURL;
 var urlStateDataSrc;
 var tempState;
+var gamesHTTP = new XMLHttpRequest();
+
+$(function() {    /// Begin-load js first
 
 });   /// End-load js first
 
@@ -39,51 +38,42 @@ function storePosition(myposition) {
     $.getJSON(strReverseGeoURL, function(thedata) {
       var sgeoState = thedata.results[0].address_components[4].long_name;
       tempState = sgeoState;
-      //console.log(typeof(sgeoState));
       document.getElementById("selState").value = sgeoState;
-      //document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;   // auto notify current state querrying
       document.getElementById('sState').innerHTML = '  [' + sgeoState + ']';    // notify search state
       document.getElementById('sQueryTxt').style.visibility = 'visible';
 
     }).done(function() {
 
-        getStateGames(tempState);
+        popStateGames(tempState);
 
     });
 
 }   //  End storePosition Function
 
 
-function getStateGames(pState) {
-  console.log("populating games for state:  " + pState);
-  var xhttp = new XMLHttpRequest();
-
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-       document.getElementById("url").innerHTML = xhttp.responseText;
-
+function getStateGamesData() {
+  gamesHTTP.onreadystatechange = function() {
+    if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
+       document.getElementById("url").innerHTML = gamesHTTP.responseText;
 
     }
   };
-
-
-  xhttp.open("GET", "/mylotteryproject/data/vStates.json", true);
-  xhttp.send();
-  var oJson = xhttp.responseText;
-  console.log(oJson);
-  alert(oJson);
+  gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
+  gamesHTTP.send();
+  var oJson = gamesHTTP.responseText;
+  return oJson;
 
 } //  End populateGames function
 
+    getStateGamesData();
 
 
+function popStateGames(pState) {
+  // Do this to return listing of games and populate select box
+    alert("Populating Games for:  " + pState);
 
-function listStateGames(pState) {
-  // Do this to return listing of games
 
-  //populateGames(populateGames(pState));
-
-}   //  End listStateGames function
+}   //  End popStateGames function
 
 
 
