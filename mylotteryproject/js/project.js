@@ -77,7 +77,7 @@ function populateGames(sState) {
   //alert("games");
 
   alert("Populating...");
-  var stateDataSrc = "/data/vStates.json";
+  var stateDataSrc = "/mylotteryproject/data/vStates.json";
   //var sJSON = JSON.parse(stateData);
 
   console.log(JSON.stringify(stateDataSrc));
