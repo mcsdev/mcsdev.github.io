@@ -91,6 +91,7 @@ function populateGames(sState) {
     oFileHTTP.open("GET", urlStateDataSrc, true);
     oFileHTTP.send();
 
+
     function myFunction(arr) {
         var out = "";
         var i;
