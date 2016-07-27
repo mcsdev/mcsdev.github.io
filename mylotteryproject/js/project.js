@@ -8,14 +8,15 @@
 
 // ***** End Pseudo ******
 
-// do nothing until document loads completely
-$(function() {
 
+$(function() {    /// Begin-load js first
 
-});
 
 var strErr;
 var strReverseGeoURL;
+var urlStateDataSrc;
+
+});   /// End-load js first
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -26,7 +27,6 @@ function getLocation() {
   }
 }
 
-
 function storePosition(myposition) {
   var lat = myposition.coords.latitude;
   var lon = myposition.coords.longitude;
@@ -34,71 +34,59 @@ function storePosition(myposition) {
 
   strReverseGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
-//  document.getElementById("url").innerHTML = strReverseGeoURL;
+    //Get JSON from google api
+    $.getJSON(strReverseGeoURL, function(thedata) {
+      var sgeoState = thedata.results[0].address_components[4].long_name;
+
+      //console.log(typeof(sgeoState));
+      document.getElementById("selState").value = sgeoState;
+      //document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;   // auto notify current state querrying
+      document.getElementById('sState').innerHTML = '  [' + sgeoState + ']';    // notify search state
+      document.getElementById('sQueryTxt').style.visibility = 'visible';
+
+    }).done(function() {
+      console.log("populating games");
+        populateGames();
+    });
 
 
-  //Get JSON from google api
-  $.getJSON(strReverseGeoURL, function(thedata) {
-
-    var sgeoState = thedata.results[0].address_components[4].long_name;
-
-    //console.log(typeof(sgeoState));
-    document.getElementById("selState").value = sgeoState;
-    document.getElementById("geo").innerHTML = "Someplace in " + sgeoState;   // auto notify current state querrying
-    document.getElementById('sState').innerHTML = '  [' + sgeoState + ']';    // notify search state
-    document.getElementById('sQueryTxt').style.visibility = 'visible';
+}   //  End storePosition Function
 
 
-    populateGames();
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     document.getElementById("url").innerHTML = xhttp.responseText;
+    }
+  };
 
-  });
 
+  xhttp.open("GET", "/mylotteryproject/data/vStates.json", true);
+  xhttp.send();
 
-
-
-
-
-
+  console.log(xhttp.responseText);
 
 }
 
-
-
-
-
-
-
-
+loadDoc();
 
 
 function populateGames(sState) {
-  // return the names of the available games for state and
-  // dynamically populate options for select list (selGame)
-  //alert("games");
 
-    var oFileHTTP = new XMLHttpRequest();
-    var urlStateDataSrc = "/mylotteryproject/data/vStates.json";
+     console.log("fired!");
+    // return the names of the available games for state and
+    // dynamically populate options for select list (selGame)
+    urlStateDataSrc = "http://www.surjacorp.com/edge/vStates.json";
 
-
-    oFileHTTP.onreadystatechange = function() {
-        if (oFileHTTP.readyState == 4 && oFileHTTP.status == 200) {
-            var myArr = JSON.parse(oFileHTTP.responseText);
-          //  myFunction(myArr);
-          console.log(typeof(myArr));
-        }
-    };
-    oFileHTTP.open("GET", urlStateDataSrc, true);
-    oFileHTTP.send();
-
-
-    function myFunction(arr) {
-
-
-
-        }
-
-
-    }
+    // $.get(urlStateDataSrc, function(theStateData) {
+    //     console.log(typeof(theStateData));
+    //     var stateData = theStateData;
+    //
+    //     document.getElementById("geo").innerHTML = stateData;
+    //     console.log(stateData);
+    //   //alert(stateData);
+    // });
 
 
 
@@ -110,15 +98,7 @@ function populateGames(sState) {
 
 
 
-    //var sJSON = JSON.parse(stateData);
-
-    console.log(JSON.stringify(urlStateDataSrc));
-    $.getJSON(urlStateDataSrc, function(list) {
-
-      document.getElementById("url").innerHTML = list;
-
-  });
-}
+}   //  End populateGames function
 
 
 function listStateGames(sState) {
@@ -126,13 +106,8 @@ function listStateGames(sState) {
   alert("Finding games in:  " + sState);
   //populateGames();
 
+}   //  End listStateGames function
 
-
-
-
-
-
-}
 
 
 function getGameProperties(sState, sGameName) {
@@ -140,9 +115,13 @@ function getGameProperties(sState, sGameName) {
 
   document.getElementById('sQueryTxt').style.visibility = 'visible';
 
-}
+}   //  End getGameProperties function
+
+
 
 function showGameChutes (iGmID) {
   // this function will display the appropriate input boxes to generate match query
   // based on the slot count value
-}
+
+
+}   //  end showGameChutes function
