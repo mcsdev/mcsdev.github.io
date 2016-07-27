@@ -76,14 +76,48 @@ function populateGames(sState) {
   // dynamically populate options for select list (selGame)
   //alert("games");
 
-  alert("Populating...");
-  var stateDataSrc = "/mylotteryproject/data/vStates.txt";
-  //var sJSON = JSON.parse(stateData);
+    alert("Populating...");
 
-  console.log(JSON.stringify(stateDataSrc));
-  $.getJSON(stateDataSrc, function(list) {
+    var oFileHTTP = new XMLHttpRequest();
+    var urlStateDataSrc = "/mylotteryproject/data/vStates.JSON";
 
-    document.getElementById("url").innerHTML = list;
+
+    oFileHTTP.onreadystatechange = function() {
+        if (oFileHTTP.readyState == 4 && oFileHTTP.status == 200) {
+            var myArr = JSON.parse(oFileHTTP.responseText);
+            myFunction(myArr);
+        }
+    };
+    oFileHTTP.open("GET", urlStateDataSrc, true);
+    oFileHTTP.send();
+
+    function myFunction(arr) {
+        var out = "";
+        var i;
+        for(i = 0; i < arr.length; i++) {
+            out += '<a href="' + arr[i].url + '">' +
+            arr[i].display + '</a><br>';
+        }
+
+       console.log(out);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    //var sJSON = JSON.parse(stateData);
+
+    console.log(JSON.stringify(stateDataSrc));
+    $.getJSON(stateDataSrc, function(list) {
+
+      document.getElementById("url").innerHTML = list;
 
   });
 }
