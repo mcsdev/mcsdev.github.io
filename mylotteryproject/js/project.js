@@ -113,8 +113,8 @@ function populateGames(sState) {
 
     //var sJSON = JSON.parse(stateData);
 
-    console.log(JSON.stringify(stateDataSrc));
-    $.getJSON(stateDataSrc, function(list) {
+    console.log(JSON.stringify(urlStateDataSrc));
+    $.getJSON(urlStateDataSrc, function(list) {
 
       document.getElementById("url").innerHTML = list;
 
