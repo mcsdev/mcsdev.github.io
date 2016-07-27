@@ -70,7 +70,7 @@ function getStateGamesData() {
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
     console.log("Populating Games for:  " + pState);
-    console.log(typeof(oStateJSON));
+    //console.log(typeof(oStateJSON));
     //iterate through data and find key value match for state
 
     $.each(oStateJSON, function(i, v)  {
