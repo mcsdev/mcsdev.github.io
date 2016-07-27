@@ -55,7 +55,7 @@ function storePosition(myposition) {
 function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
-       document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
+       //document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
        oStateJSON = gamesHTTP.responseText;
     }
   };
@@ -65,25 +65,25 @@ function getStateGamesData() {
 
 } //  End populateGames function
 
-    getStateGamesData();
+  getStateGamesData();
 
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
     console.log("Populating Games for:  " + pState);
-    //console.log(typeof(gamesHTTP));
+    console.log(typeof(oStateJSON));
     //iterate through data and find key value match for state
 
-    // $.each(gamesHTTP, function(i, v)  {
-    //
-    //     console.log(i.responseText);
-    //     document.getElementById('debugger').innerHTML = i;
-    //
-    //
-    //         //console.log("fired!");
-    //
-    //
-    //
-    // });
+    $.each(oStateJSON, function(i, v)  {
+
+        console.log(i);
+      //  document.getElementById('debugger').innerHTML = i;
+
+
+          //  console.log("fired!");
+
+
+
+    });
 
 
 
