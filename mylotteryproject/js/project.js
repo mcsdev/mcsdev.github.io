@@ -47,14 +47,14 @@ function storePosition(myposition) {
 
     }).done(function() {
 
-        populateGames(tempState);
+        getStateGames(tempState);
 
     });
 
 }   //  End storePosition Function
 
 
-function populateGames(pState) {
+function getStateGames(pState) {
   console.log("populating games for state:  " + pState);
   var xhttp = new XMLHttpRequest();
 
@@ -70,7 +70,7 @@ function populateGames(pState) {
   xhttp.open("GET", "/mylotteryproject/data/vStates.json", true);
   xhttp.send();
 
-//  console.log(xhttp.responseText);
+  console.log(xhttp.responseText);
 
 } //  End populateGames function
 
@@ -79,7 +79,7 @@ function populateGames(pState) {
 
 function listStateGames(pState) {
   // Do this to return listing of games
-  //alert("Finding games in:  " + pState);
+
   //populateGames(populateGames(pState));
 
 }   //  End listStateGames function
