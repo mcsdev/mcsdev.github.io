@@ -70,7 +70,7 @@ function populateGames(pState) {
   xhttp.open("GET", "/mylotteryproject/data/vStates.json", true);
   xhttp.send();
 
-  console.log(xhttp.responseText);
+//  console.log(xhttp.responseText);
 
 } //  End populateGames function
 
