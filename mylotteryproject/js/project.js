@@ -74,18 +74,20 @@ getStateGamesData();
 function popStateGames(pState) {
   //  Do this to return listing of games and populate select box
   console.log("Populating Games for:  " + pState);
-    console.log(arrStateJSON.length);
+    document.getElementById('debugger').innerHTML = ("arrStateJSON is an " + typeof(arrStateJSON) + " of length " +  arrStateJSON.length);
 
   //  iterate through array and find key value match for state
   $.each(arrStateJSON, function(objs){
       for(i=0; i < arrStateJSON.length; i++) {
-          console.log($.isArray(arrStateJSON[i]));
-          if (arrStateJSON[i].StateName === pState) {
-              arrGameIDs = arrStateJSON[i].stateGameIDs;
-              //var arrGameIDs = new array(arrStateJSON[i].stateGameIDs);
-              console.log(arrGameIDs);
-              break;
-            }
+          //console.log($.isArray(arrStateJSON[i]));
+          arrGameIDs = arrStateJSON[i].stateGameIDs;
+          return(arrStateJSON[i].StateName != pState);
+          // if () {
+          //     arrGameIDs = arrStateJSON[i].stateGameIDs;
+          //     //var arrGameIDs = new array(arrStateJSON[i].stateGameIDs);
+          //     console.log(arrGameIDs);
+          //     break;
+          //   }
       } //  End for
   });
 
