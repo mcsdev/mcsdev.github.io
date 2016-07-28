@@ -15,7 +15,7 @@ var tempState;
 var gamesHTTP = new XMLHttpRequest();
 var gamesMaster = new XMLHttpRequest();
 var arrStateJSON;
-var arrGameIDs = new array();
+
 //var oStateJSON;
 
 $(function() {    /// Begin-load js first
@@ -80,6 +80,7 @@ function popStateGames(pState) {
       for(i=0; i < arrStateJSON.length; i++) {
           if (arrStateJSON[i].StateName === pState) {
               var arrGameIDs = arrStateJSON[i].stateGameIDs;
+              //var arrGameIDs = new array();
               console.log(arrGameIDs);
               break;
             }
