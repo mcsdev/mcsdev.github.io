@@ -13,6 +13,7 @@ var strReverseGeoURL;
 var urlStateDataSrc;
 var tempState;
 var gamesHTTP = new XMLHttpRequest();
+var arrStateJSON;
 var oStateJSON;
 
 $(function() {    /// Begin-load js first
@@ -55,8 +56,7 @@ function storePosition(myposition) {
 function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
-       oStateJSON = JSON.parse(gamesHTTP.responseText);
-      console.log(oStateJSON);
+       arrStateJSON = JSON.parse(gamesHTTP.responseText);
     }
   };  //  End getStateGamesData
 
@@ -71,18 +71,13 @@ function getStateGamesData() {
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
     console.log("Populating Games for:  " + pState);
-    //console.log(typeof(oStateJSON));
-    //iterate through data and find key value match for state
+
+    //iterate through array and find key value match for state
+    $.each(arrStateJSON, function(i, v)  {
 
 
+        console.log(i + " " + v);
 
-    $.each(oStateJSON, function(i, v)  {
-
-        console.log(i.keys);
-      //  document.getElementById('debugger').innerHTML = i;
-
-
-          //  console.log("fired!");
 
 
 
