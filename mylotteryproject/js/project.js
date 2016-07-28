@@ -77,27 +77,15 @@ function popStateGames(pState) {
   $.each(arrStateJSON, function(keys, val){
 
 
-    for(i=0; i < arrStateJSON.length; i++) {
-        console.log(arrStateJSON[i]);
-        if (arrStateJSON[i].stateName === pState) {
-            console.log(arrStateJSON[i].stateGameIDs);
-          }
+      for(i=0; i < arrStateJSON.length; i++) {
+          //console.log(arrStateJSON[i]);
+          if (arrStateJSON[i].StateName === pState) {
+              console.log(arrStateJSON[i].stateGameIDs);
+            }
 
+      } //  End for
 
-
-
-
-
-    } //  End for
-
-
-    //
-    //
   });
-
-
-
-
 
 }   //  End popStateGames function
 
