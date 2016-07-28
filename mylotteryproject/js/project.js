@@ -93,6 +93,7 @@ function popStateGames(pState) {
 
 
 console.log($.isArray(arrGameIDs));
+console.log(arrGameIDs);
 
   for(j=0; j < arrGameIDs.length; j++) {
     //  get game names of every game id
