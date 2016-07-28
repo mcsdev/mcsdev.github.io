@@ -73,11 +73,19 @@ function popStateGames(pState) {
     console.log("Populating Games for:  " + pState);
 
     //iterate through array and find key value match for state
-    $.each(arrStateJSON, function(i, v)  {
+    $.each(arrStateJSON, function(i1, v1)  {
 
 
-        console.log(i + " " + v);
+        //console.log(object.keys(i) + " " + v);
+          for(i=0;arrStateJSON.length; i++) {
 
+            if (i===0) {
+              console.log(typeof(arrStateJSON[i]));
+
+            }
+
+
+          }
 
 
 
