@@ -88,7 +88,7 @@ function popStateGames(pState) {
       } //  End for
   });
 
-console.log("Length of arrGamesID:  " + arrGameIDs.length);
+console.log("Is arrGameIDs an array?  " + isArray(arrGameIDs));
 
   for(j=0; j < arrGameIDs.length; j++) {
     //  get game names of every game id
