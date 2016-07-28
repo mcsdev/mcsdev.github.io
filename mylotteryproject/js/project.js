@@ -80,18 +80,18 @@ function popStateGames(pState) {
           for(i=0;arrStateJSON.length; i++) {
 
 
-            // if (i===0) {
+             if (i===3) {
             //   //console.log(arrStateJSON[i].keys);
-            //   document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
-            // }
-
+               document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
+             }
+              break;
 
           }
 
 
 
     });
-        console.log(arrStateJSON.length);
+
 
 
 }   //  End popStateGames function
