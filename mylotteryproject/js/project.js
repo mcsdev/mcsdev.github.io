@@ -76,11 +76,11 @@ function popStateGames(pState) {
     $.each(arrStateJSON, function(keys, val){
 
           var oState;
-           //for(i=0;arrStateJSON.length; i++) {
+           for(i=0;arrStateJSON.length; i++) {
 
-                console.log(arrStateJSON[i]);
+            document.getElementById('debugger').innerHTML = arrStateJSON[i];
 
-           //}
+           }
 
           // $.each(oStateJSON, function(key, val) {
           //
