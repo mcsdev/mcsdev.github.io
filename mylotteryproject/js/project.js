@@ -57,7 +57,9 @@ function getStateGamesData() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
        //document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
        oStateJSON = gamesHTTP.responseText;
-       console.log(typeof(oStateJSON));
+      var arrStateJSON = array(oStateJSON);
+      
+      console.log(typeof(arrStateJSON));
        //console.log(oStateJSON);
 
     }
@@ -77,6 +79,8 @@ function popStateGames(pState) {
     console.log("Populating Games for:  " + pState);
     //console.log(typeof(oStateJSON));
     //iterate through data and find key value match for state
+
+
 
     $.each(oStateJSON, function(i, v)  {
 
