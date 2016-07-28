@@ -77,7 +77,7 @@ function popStateGames(pState) {
 
 
         //console.log(object.keys(i) + " " + v);
-          //for(i=0;arrStateJSON.length; i++) {
+          for(i=0;arrStateJSON.length; i++) {
 
 
             // if (i===0) {
@@ -86,7 +86,7 @@ function popStateGames(pState) {
             // }
 
 
-          //}
+          }
 
 
 
