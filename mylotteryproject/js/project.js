@@ -36,19 +36,19 @@ function storePosition(myposition) {
 
   strReverseGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
-    //Get JSON from google api
-    $.getJSON(strReverseGeoURL, function(thedata) {
-      var sgeoState = thedata.results[0].address_components[4].long_name;
-      tempState = sgeoState;
-      document.getElementById("selState").value = sgeoState;
-      document.getElementById('sState').innerHTML = '  [' + sgeoState + ']';    // notify search state
-      document.getElementById('sQueryTxt').style.visibility = 'visible';
+  //Get JSON from google api
+  $.getJSON(strReverseGeoURL, function(thedata) {
+    var sgeoState = thedata.results[0].address_components[4].long_name;
+    tempState = sgeoState;
+    document.getElementById("selState").value = sgeoState;
+    document.getElementById('sState').innerHTML = '  [' + sgeoState + ']';    // notify search state
+    document.getElementById('sQueryTxt').style.visibility = 'visible';
 
-    }).done(function() {
+  }).done(function() {
 
-        popStateGames(tempState);
+    popStateGames(tempState);
 
-    });
+  });
 
 }   //  End storePosition Function
 
@@ -56,7 +56,7 @@ function storePosition(myposition) {
 function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
-       arrStateJSON = JSON.parse(gamesHTTP.responseText);
+      arrStateJSON = JSON.parse(gamesHTTP.responseText);
     }
   };  //  End getStateGamesData
 
@@ -66,29 +66,29 @@ function getStateGamesData() {
 
 } //  End populateGames function
 
-  getStateGamesData();
+getStateGamesData();
 
 function popStateGames(pState) {
   // Do this to return listing of games and populate select box
-    console.log("Populating Games for:  " + pState);
-    //console.log(arrStateJSON.length);
+  console.log("Populating Games for:  " + pState);
+  //console.log(arrStateJSON.length);
 
-    //iterate through array and find key value match for state
-    $.each(arrStateJSON, function(keys, val){
+  //iterate through array and find key value match for state
+  $.each(arrStateJSON, function(keys, val){
 
 
-            for(i=0; i < arrStateJSON.length; i++) {
-           //
-             document.getElementById('debugger').innerHTML = arrStateJSON[i];
-           //
-            }
+    for(i=0; i < arrStateJSON.length; i++) {
+      //
+      document.getElementById('debugger').innerHTML = arrStateJSON[i];
+      //
+    }
 
-          // $.each(oStateJSON, function(key, val) {
-          //
-          //
-           });
-
+    // $.each(oStateJSON, function(key, val) {
+    //
+    //
   });
+
+
 
 
 
