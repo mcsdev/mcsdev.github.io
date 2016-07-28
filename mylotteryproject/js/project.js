@@ -80,7 +80,7 @@ function popStateGames(pState) {
           for(i=0;arrStateJSON.length; i++) {
 
             if (i===0) {
-              console.log(typeof(arrStateJSON[i]));
+              console.log(arrStateJSON[i].keys);
 
             }
 
