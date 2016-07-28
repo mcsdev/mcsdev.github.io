@@ -88,7 +88,7 @@ function popStateGames(pState) {
 
   for(j=0; j < arrGameIDs.length; j++) {
     //  get game names of every game id
-    getGameName(arrGameIDs[i]);
+    //getGameName(arrGameIDs[i]);
   } //  End For
 
 }   //  End popStateGames function
