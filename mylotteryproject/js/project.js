@@ -14,7 +14,7 @@ var urlStateDataSrc;
 var tempState;
 var gamesHTTP = new XMLHttpRequest();
 var arrStateJSON;
-var oStateJSON;
+//var oStateJSON;
 
 $(function() {    /// Begin-load js first
 
@@ -78,12 +78,23 @@ function popStateGames(pState) {
 
 
     for(i=0; i < arrStateJSON.length; i++) {
-      //
-      document.getElementById('debugger').innerHTML = arrStateJSON[i];
-      //
-    }
 
-    // $.each(oStateJSON, function(key, val) {
+        var oStateJSON = arrStateJSON[i];
+
+      //$.each(oStateJSON, function(key, val) {
+
+          console.log(object.entries(oStateJSON));
+        //
+        //document.getElementById('debugger').innerHTML = arrStateJSON[i];
+        //
+
+
+      //});
+
+
+    } //  End for
+
+
     //
     //
   });
