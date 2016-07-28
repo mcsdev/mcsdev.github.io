@@ -79,26 +79,37 @@ function popStateGames(pState) {
       for(i=0; i < arrStateJSON.length; i++) {
           if (arrStateJSON[i].StateName === pState) {
               var arrGameIDs = arrStateJSON[i].stateGameIDs;
-              console.log(arrGameIDs);
+              //console.log(arrGameIDs);
               break;
             }
       } //  End for
-
-
   });
+
+  for(j=0; j < arrGameIDs.length; j++) {
+    //  get game names of every game id
+    getGameName(arrGameIDs[i]);
+  } //  End For
 
 }   //  End popStateGames function
 
 
+function getGameName(gameID) {
+  console.log("Getting properties for:  " + gameID);
+}
+
+
+
+
+
+
+
 //  Take game ID's and populate select box
 $.getJSON(strGamesMasterURL, function(thedata) {
-
-
 }).done(function() {
-
 });
 
-function getGameList(pState, pGameName) {
+
+function getMasterGameList(pState) {
   // Return the properties of a particular game
   gamesMaster.onreadystatechange = function() {
        if (gamesMaster.readyState == 4 && gamesMaster.status == 200) {
