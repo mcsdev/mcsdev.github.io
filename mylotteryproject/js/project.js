@@ -81,12 +81,12 @@ function popStateGames(pState) {
           if (arrStateJSON[i].StateName === pState) {
               var arrGameIDs = arrStateJSON[i].stateGameIDs;
               //var arrGameIDs = new array(arrStateJSON[i].stateGameIDs);
-              console.log(typeof(arrGameIDs));
+              console.log(arrGameIDs);
               break;
             }
       } //  End for
   });
-
+console.log(arrGameIDs);
   for(j=0; j < arrGameIDs.length; j++) {
     //  get game names of every game id
     //getGameName(arrGameIDs[i]);
