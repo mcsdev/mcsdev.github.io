@@ -56,11 +56,9 @@ function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
        //document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
-       oStateJSON = gamesHTTP.responseText;
-      var arrStateJSON = array(oStateJSON);
-      
-      console.log(typeof(arrStateJSON));
-       //console.log(oStateJSON);
+       oStateJSON = JSON.parse(gamesHTTP.responseText);
+      console.log(typeof(oStateJSON));
+    
 
     }
   };
