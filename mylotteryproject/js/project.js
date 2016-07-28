@@ -9,10 +9,11 @@
 // ***** End Pseudo ******
 
 var strErr;
-var strReverseGeoURL;
-var urlStateDataSrc;
+var strGamesMasterURL = "/mylotteryproject/data/vgamesmaster.json";
+var StrStateDataURL = "/mylotteryproject/data/vStates.json";
 var tempState;
 var gamesHTTP = new XMLHttpRequest();
+var gamesMaster = new XMLHttpRequest();
 var arrStateJSON;
 //var oStateJSON;
 
@@ -33,8 +34,8 @@ function storePosition(myposition) {
   var lat = myposition.coords.latitude;
   var lon = myposition.coords.longitude;
   var strState;
+  var strReverseGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
-  strReverseGeoURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&key=AIzaSyAgKrWUdpQ-aAa-UiI-3mPZ2H7Fl1OP1kU";
 
   //Get JSON from google api
   $.getJSON(strReverseGeoURL, function(thedata) {
@@ -61,7 +62,7 @@ function getStateGamesData() {
   };  //  End getStateGamesData
 
 
-  gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
+  gamesHTTP.open("GET", StrStateDataURL, true);
   gamesHTTP.send();
 
 } //  End populateGames function
@@ -69,31 +70,52 @@ function getStateGamesData() {
 getStateGamesData();
 
 function popStateGames(pState) {
-  // Do this to return listing of games and populate select box
+  //  Do this to return listing of games and populate select box
   console.log("Populating Games for:  " + pState);
-  //console.log(arrStateJSON.length);
+  //  console.log(arrStateJSON.length);
 
-  //iterate through array and find key value match for state
+  //  iterate through array and find key value match for state
   $.each(arrStateJSON, function(keys){
-
-
       for(i=0; i < arrStateJSON.length; i++) {
-          //console.log(arrStateJSON[i]);
           if (arrStateJSON[i].StateName === pState) {
-              var gamesArr = arrStateJSON[i].stateGameIDs;
+              var arrGameIDs = arrStateJSON[i].stateGameIDs;
+              console.log(arrGameIDs);
               break;
             }
-
       } //  End for
+
 
   });
 
 }   //  End popStateGames function
 
 
+//  Take game ID's and populate select box
+$.getJSON(strGamesMasterURL, function(thedata) {
 
-function getGameProperties(pState, pGameName) {
+
+}).done(function() {
+
+});
+
+function getGameList(pState, pGameName) {
   // Return the properties of a particular game
+  gamesMaster.onreadystatechange = function() {
+       if (gamesMaster.readyState == 4 && gamesMaster.status == 200) {
+
+       }
+     gamesMaster.open("GET", strGamesMasterURL, true);
+     gamesMaster.send();
+
+
+
+};  //  End getGameProperties
+
+
+
+
+
+
 
   document.getElementById('sQueryTxt').style.visibility = 'visible';
 
