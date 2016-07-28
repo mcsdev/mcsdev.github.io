@@ -56,12 +56,14 @@ function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
        //document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
-       oStateJSON = gamesHTTP.responseType;
+       oStateJSON = gamesHTTP.responseText;
        //console.log(typeof(oStateJSON));
        console.log(oStateJSON);
 
     }
   };
+
+
   gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
   gamesHTTP.send();
 
