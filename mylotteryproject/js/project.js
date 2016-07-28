@@ -79,10 +79,12 @@ function popStateGames(pState) {
 
     for(i=0; i < arrStateJSON.length; i++) {
         console.log(arrStateJSON[i]);
-        var oStateJSON = arrStateJSON[i];
+        if (arrStateJSON[i].stateName === pState) {
+            console.log(arrStateJSON[i].stateGameIDs);
+          }
 
-        //document.getElementById('debugger').innerHTML = Object.entries(oStateJSON);
-        console.log(Object.entries(oStateJSON));
+
+
 
 
 
