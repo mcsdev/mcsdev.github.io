@@ -15,6 +15,7 @@ var tempState;
 var gamesHTTP = new XMLHttpRequest();
 var gamesMaster = new XMLHttpRequest();
 var arrStateJSON;
+var arrGameIDs;
 
 //var oStateJSON;
 
@@ -79,7 +80,7 @@ function popStateGames(pState) {
   $.each(arrStateJSON, function(keys){
       for(i=0; i < arrStateJSON.length; i++) {
           if (arrStateJSON[i].StateName === pState) {
-              var arrGameIDs = arrStateJSON[i].stateGameIDs;
+              arrGameIDs = arrStateJSON[i].stateGameIDs;
               //var arrGameIDs = new array(arrStateJSON[i].stateGameIDs);
               console.log(arrGameIDs);
               break;
