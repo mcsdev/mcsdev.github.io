@@ -55,18 +55,14 @@ function storePosition(myposition) {
 function getStateGamesData() {
   gamesHTTP.onreadystatechange = function() {
     if (gamesHTTP.readyState == 4 && gamesHTTP.status == 200) {
-       //document.getElementById("debugger").innerHTML = gamesHTTP.responseText;
        oStateJSON = JSON.parse(gamesHTTP.responseText);
-      console.log(typeof(oStateJSON));
-    
-
+      console.log(oStateJSON);
     }
-  };
+  };  //  End getStateGamesData
 
 
   gamesHTTP.open("GET", "/mylotteryproject/data/vStates.json", true);
   gamesHTTP.send();
-
 
 } //  End populateGames function
 
@@ -82,7 +78,7 @@ function popStateGames(pState) {
 
     $.each(oStateJSON, function(i, v)  {
 
-        console.log(i);
+        console.log(i.keys);
       //  document.getElementById('debugger').innerHTML = i;
 
 
