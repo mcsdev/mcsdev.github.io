@@ -81,10 +81,10 @@ function popStateGames(pState) {
 
 
              if (i===3) {
-            //   //console.log(arrStateJSON[i].keys);
+               console.log(arrStateJSON[i]);
                document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
              }
-              break;
+
 
           }
 
