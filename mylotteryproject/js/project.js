@@ -79,6 +79,7 @@ function popStateGames(pState) {
   //  iterate through array and find key value match for state
   $.each(arrStateJSON, function(keys){
       for(i=0; i < arrStateJSON.length; i++) {
+          console.log($isArray(arrStateJSON[i]));
           if (arrStateJSON[i].StateName === pState) {
               arrGameIDs = arrStateJSON[i].stateGameIDs;
               //var arrGameIDs = new array(arrStateJSON[i].stateGameIDs);
