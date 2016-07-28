@@ -85,7 +85,7 @@ function popStateGames(pState) {
 
         //  console.log(object.entries(oStateJSON));
         //
-        document.getElementById('debugger').innerHTML = object.entries(oStateJSON);
+        document.getElementById('debugger').innerHTML = Object.entries(oStateJSON);
         //
 
 
