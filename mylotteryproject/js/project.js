@@ -73,20 +73,29 @@ function popStateGames(pState) {
     console.log("Populating Games for:  " + pState);
 
     //iterate through array and find key value match for state
-    $.each(arrStateJSON, function(key, val)  {
+    arrStateJSON.foreach(function(key, val){
 
 
         //console.log(object.keys(i) + " " + v);
-          for(i=0;arrStateJSON.length; i++) {
 
 
-             if (i===3) {
-               console.log(arrStateJSON[i]);
-               document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
-             }
+          // for(i=0;arrStateJSON.length; i++) {
+          //    if (i===3) {
+          //      console.log(arrStateJSON[i]);
+          //      document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
+          //    }
+          // }
 
 
-          }
+
+
+
+          $.each(oStateJSON, function(key, val) {
+
+
+          });
+
+
 
 
 
