@@ -79,7 +79,7 @@ function popStateGames(pState) {
            for(i=0;arrStateJSON.length; i++) {
           //    if (i===3) {
                 console.log(arrStateJSON[i]);
-                document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
+                //document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
           //    }
            }
 
