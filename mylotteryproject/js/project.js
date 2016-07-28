@@ -79,8 +79,8 @@ function popStateGames(pState) {
   $.each(arrStateJSON, function(keys){
       for(i=0; i < arrStateJSON.length; i++) {
           if (arrStateJSON[i].StateName === pState) {
-              var arrGameIDs = arrStateJSON[i].stateGameIDs;
-              //var arrGameIDs = new array();
+              //var arrGameIDs = arrStateJSON[i].stateGameIDs;
+              var arrGameIDs = new array(arrStateJSON[i].stateGameIDs);
               console.log(arrGameIDs);
               break;
             }
