@@ -75,22 +75,17 @@ function popStateGames(pState) {
     //iterate through array and find key value match for state
     $.each(arrStateJSON, function(keys, val){
 
+          var oState;
+           //for(i=0;arrStateJSON.length; i++) {
 
-           for(i=0;arrStateJSON.length; i++) {
-          //    if (i===3) {
                 console.log(arrStateJSON[i]);
-                //document.getElementById('debugger').innerHTML  = arrStateJSON[i].keys;
-          //    }
-           }
+
+           //}
 
           // $.each(oStateJSON, function(key, val) {
           //
           //
           // });
-
-
-
-
 
     });
 
