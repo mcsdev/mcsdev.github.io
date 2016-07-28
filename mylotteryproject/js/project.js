@@ -83,9 +83,9 @@ function popStateGames(pState) {
 
       //$.each(oStateJSON, function(key, val) {
 
-          console.log(object.entries(oStateJSON));
+        //  console.log(object.entries(oStateJSON));
         //
-        //document.getElementById('debugger').innerHTML = arrStateJSON[i];
+        document.getElementById('debugger').innerHTML = object.entries(oStateJSON);
         //
 
 
