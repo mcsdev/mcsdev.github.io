@@ -89,12 +89,13 @@ function popStateGames(pState) {
       } //  End for
 
   });
+
   arrGameIDs = arrGameIDs.replace("[","");
   arrGameIDs = arrGameIDs.replace("]","");
-  
-  console.log(arrGameIDs);
-//console.log($.isArray(arrGameIDs));
-console.log(typeof(arrGameIDs));
+  arrGameIDs = arrGameIDs.split(arrGameIDs, ",");
+
+console.log(arrGameIDs);
+console.log($.isArray(arrGameIDs));
 console.log(arrGameIDs[0]);
 
   for(j=0; j < arrGameIDs.length; j++) {
