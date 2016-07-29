@@ -121,7 +121,7 @@ visibility:hidden;
   font-weight: bold;
   padding: 5px;
   transition: visibility 500ms;
-  visibility: hidden;
+  /*visibility: hidden;*/
   /*width: 75px;*/
 }
 
@@ -148,7 +148,7 @@ visibility:hidden;
   background-color:rgba(255,255,255,0.4);
   color: red;
   font-weight: bold;
-  visibility: hidden;
+  /*visibility: hidden;*/
   /*width: 75px;*/
 }
 

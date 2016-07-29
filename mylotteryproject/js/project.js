@@ -84,7 +84,7 @@ function popStateGames(pState) {
            if (arrStateJSON[i].StateName === pState) {
               arrGameIDs = arrStateJSON[i].stateGameIDs;
               console.log(arrGameIDs);
-              return;
+              //return;
              }
       } //  End for
 
@@ -149,3 +149,12 @@ function showGameChutes (pGmID) {
 
 
 }   //  end showGameChutes function
+
+
+function findMatch(arrNumber, iGameID) {
+  //  Given an array of numbers and a game id parameter, search
+  //  for matches in appropriate json
+
+
+
+}
