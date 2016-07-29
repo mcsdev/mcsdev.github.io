@@ -92,6 +92,7 @@ function popStateGames(pState) {
 
   console.log(arrGameIDs.replace("[",""));
   arrGameIDs.replace("]","");
+  console.log(arrGameIDs);
 //console.log($.isArray(arrGameIDs));
 console.log(typeof(arrGameIDs));
 console.log(arrGameIDs[0]);
