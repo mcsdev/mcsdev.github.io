@@ -91,7 +91,7 @@ function popStateGames(pState) {
   });
 
   arrGameIDs.replace("[","");
-  arrGameIDs.replace("]");
+  arrGameIDs.replace("]","");
 //console.log($.isArray(arrGameIDs));
 console.log(typeof(arrGameIDs));
 console.log(arrGameIDs[0]);
