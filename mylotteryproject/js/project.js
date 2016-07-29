@@ -92,9 +92,10 @@ function popStateGames(pState) {
 
   arrGameIDs = arrGameIDs.replace("[","");
   arrGameIDs = arrGameIDs.replace("]","");
-  arrGameIDs = arrGameIDs.split(arrGameIDs, ",");
+  console.log(arrGameIDs + ' before split');
+  arrGameIDs = arrGameIDs.split(arrGameIDs, ',');
 
-console.log(arrGameIDs);
+console.log(arrGameIDs + ' after split');
 console.log($.isArray(arrGameIDs));
 console.log(arrGameIDs.length);
 
