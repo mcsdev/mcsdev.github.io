@@ -83,6 +83,8 @@ function popStateGames(pState) {
 
            if (arrStateJSON[i].StateName === pState) {
               arrGameIDs = arrStateJSON[i].stateGameIDs;
+              arrGameIDs.replace("[","");
+              arrGameIDs.replace("]");
               console.log(arrGameIDs);
               //return;
              }
