@@ -101,7 +101,7 @@ console.log(newGameIDs.length);
 
   for(j=0; j < newGameIDs.length; j++) {
     //  get game names of every game id
-    getGameName(arrGameIDs[i]);
+    getGameName(newGameIDs[i]);
   } //  End For
 
 }   //  End popStateGames function
