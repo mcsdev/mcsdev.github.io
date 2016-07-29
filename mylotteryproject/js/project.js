@@ -93,13 +93,13 @@ function popStateGames(pState) {
   arrGameIDs = arrGameIDs.replace("[","");
   arrGameIDs = arrGameIDs.replace("]","");
   console.log(arrGameIDs + ' before split');
-  arrGameIDs = arrGameIDs.split(arrGameIDs, ',');
+  var newGameIDs = arrGameIDs.split(arrGameIDs, ',');
 
-console.log(arrGameIDs + ' after split');
-console.log($.isArray(arrGameIDs));
-console.log(arrGameIDs.length);
+console.log(newGameIDs + ' after split');
+console.log($.isArray(newGameIDs));
+console.log(newGameIDs.length);
 
-  for(j=0; j < arrGameIDs.length; j++) {
+  for(j=0; j < newGameIDs.length; j++) {
     //  get game names of every game id
     getGameName(arrGameIDs[i]);
   } //  End For
