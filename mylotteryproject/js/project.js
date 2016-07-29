@@ -83,8 +83,6 @@ function popStateGames(pState) {
 
            if (arrStateJSON[i].StateName === pState) {
               arrGameIDs = arrStateJSON[i].stateGameIDs;
-              arrGameIDs.replace("[","");
-              arrGameIDs.replace("]");
               console.log(arrGameIDs);
               //return;
              }
@@ -92,9 +90,10 @@ function popStateGames(pState) {
 
   });
 
-
-console.log($.isArray(arrGameIDs));
-console.log(arrGameIDs);
+  arrGameIDs.replace("[","");
+  arrGameIDs.replace("]");
+//console.log($.isArray(arrGameIDs));
+console.log(typeof(arrGameIDs));
 
   for(j=0; j < arrGameIDs.length; j++) {
     //  get game names of every game id
