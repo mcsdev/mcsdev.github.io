@@ -89,9 +89,9 @@ function popStateGames(pState) {
       } //  End for
 
   });
-
-  console.log(arrGameIDs.replace("[",""));
-  arrGameIDs.replace("]","");
+  arrGameIDs = arrGameIDs.replace("[","");
+  arrGameIDs = arrGameIDs.replace("]","");
+  
   console.log(arrGameIDs);
 //console.log($.isArray(arrGameIDs));
 console.log(typeof(arrGameIDs));
